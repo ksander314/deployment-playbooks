@@ -17,8 +17,8 @@ ntpservers:
   - "server 2.us.pool.ntp.org"
   - "server 3.us.pool.ntp.org"
 
-image: "ami-0b383171"
-region: "us-east-1"
+image: "ami-0f34ef0cc80cb6982"
+region: "eu-central-1"
 
 NODE_PWD: "node.pwd" # don't change this one
 NODE_SOURCE_DEB: "https://deb.nodesource.com/node_8.x"
@@ -27,17 +27,17 @@ PARITY_BIN_SHA256: "fbb349dc45e5de1b337880622be88c375998bf2ce69bb402eb9fe60f63b3
 ORCHESTRATOR_BIN_LOC: ""
 ORCHESTRATOR_BIN_SHA256: ""
 
-SCRIPTS_MOC_BRANCH: "sokol"
-SCRIPTS_VALIDATOR_BRANCH: "sokol"
-MAIN_REPO_FETCH: "poanetwork"
-GENESIS_BRANCH: "sokol"
-GENESIS_NETWORK_NAME: "Sokol"
+SCRIPTS_MOC_BRANCH: "TestNetwork1"
+SCRIPTS_VALIDATOR_BRANCH: "TestNetwork1"
+MAIN_REPO_FETCH: "ksander314"
+GENESIS_BRANCH: "TestNetwork1"
+GENESIS_NETWORK_NAME: "TestNetwork1"
 
-MOC_ADDRESS: "0xe8ddc5c7a2d2f0d7a9798459c0104fdf5e987aca"
+MOC_ADDRESS: "0x00dcd1bc751772581544b7c237d2738db9fb4d9b"
 BLK_GAS_LIMIT: "8000000"
 
 #bootnode
-bootnode_instance_type: "t2.large"
+bootnode_instance_type: "t3.micro"
 bootnode_instance_name: "bootnode"
 bootnode_count_instances: "1"
 bootnode_security_group: "{{ MAIN_REPO_FETCH }}-{{ GENESIS_BRANCH }}-bootnode-security"
@@ -45,27 +45,27 @@ bootnode_archive: "off"
 bootnode_orchestrator: "off"
 
 #netstat
-netstat_instance_type: "t2.large"
+netstat_instance_type: "t3.micro"
 netstat_instance_name: "netstat"
 netstat_count_instances: "1"
 netstat_security_group: "{{ MAIN_REPO_FETCH }}-{{ GENESIS_BRANCH }}-netstat-security"
 
 #validator
-validator_instance_type: "t2.large"
+validator_instance_type: "t3.micro"
 validator_instance_name: "validator"
 validator_count_instances: "1"
 validator_security_group: "{{ MAIN_REPO_FETCH }}-{{ GENESIS_BRANCH }}-validator-security"
 validator_archive: "off"
 
 #moc
-moc_instance_type: "t2.large"
+moc_instance_type: "t3.micro"
 moc_instance_name: "moc"
 moc_count_instances: "1"
 moc_security_group: "{{ MAIN_REPO_FETCH }}-{{ GENESIS_BRANCH }}-moc-security"
 moc_archive: "off"
 
 #explorer
-explorer_instance_type: "t2.large"
+explorer_instance_type: "t3.micro"
 explorer_instance_name: "explorer"
 explorer_count_instances: "1"
 explorer_security_group: "{{ MAIN_REPO_FETCH }}-{{ GENESIS_BRANCH }}-explorer-security"
